@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07060f;
+  --foreground: #f4f4f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.32);
+  color: #ffffff;
+}
+
+.electric-page {
+  background:
+    linear-gradient(115deg, rgba(217, 249, 157, 0.1), transparent 24%),
+    linear-gradient(245deg, rgba(34, 211, 238, 0.18), transparent 30%),
+    linear-gradient(315deg, rgba(251, 113, 133, 0.12), transparent 28%),
+    #07060f;
+}
+
+.signal-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.holo-panel {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(15, 23, 42, 0.66) 38%, rgba(251, 113, 133, 0.1)),
+    rgba(255, 255, 255, 0.06);
+}
+
+.holo-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(90deg, transparent, rgba(217, 249, 157, 0.18), transparent),
+    repeating-linear-gradient(120deg, transparent 0 22px, rgba(255, 255, 255, 0.035) 23px 24px);
+  opacity: 0.76;
+}
+
+.holo-panel > * {
+  position: relative;
+}
+
+.holo-text {
+  background: linear-gradient(90deg, #ffffff 0%, #d9f99d 25%, #22d3ee 58%, #fb7185 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neon-divider {
+  background: linear-gradient(90deg, transparent, rgba(217, 249, 157, 0.9), rgba(34, 211, 238, 0.9), rgba(251, 113, 133, 0.86), transparent);
+}
+
+.angled-panel {
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
